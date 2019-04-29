@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Start Up</title>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+
+<!-- 开发环境版本，包含了命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: "#app", <!-- 选择器 -->
+        data: {  <!-- 属性 -->
+            message: 'Hello Vue!'
+        }
+    })
+
+</script>
+
+<!-- 生产环境版本，优化了尺寸和速度  -->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+</body>
+</html>
