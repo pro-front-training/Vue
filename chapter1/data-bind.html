@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data-bind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row" style="margin-bottom: 30px">
+        <div class="col-md-4">
+            <div id="app-1">
+                {{ message }}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-2">
+                <span v-bind:title="message">
+                    悬停鼠标查看动态绑定的信息!
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-3">
+                <p v-if="seen">现在你看到我了.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 30px">
+        <div class="col-md-4">
+            <div id="app-4">
+                <ol>
+                    <li v-for="book in books">
+                        {{book.title}}&nbsp;&nbsp;&nbsp;&nbsp;{{book.price}}
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-5">
+                <p> {{message}}</p>
+                <button class="btn btn-primary" v-on:click="reverseMessage">逆转字符串</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-6">
+                <p> {{message}}</p>
+                <input class="form-control" v-model="message">
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 30px">
+        <div class="col-md-4">
+            <div id="app-7">
+                <ol>
+                    <!-- books 是组件名称 -->
+                    <books
+                        v-for="book in books"
+                        v-bind:book="book"
+                        v-bind:key="book.id"></books>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-8">
+                <p>{{message}}</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-9">
+                <p v-html="message"></p>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 30px">
+        <div class="col-md-4">
+            <div id="app-10">
+                <span :title="message">
+                    使用缩写绑定参数!
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-11">
+                <p>{{message}}</p>
+                <button class="btn btn-primary" @click="log">终端输出</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-12">
+                <p>{{message}}</p>
+                <p>计算属性: {{reversedMessage}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 30px">
+        <div class="col-md-4">
+            <div id="app-13">
+                <ul>
+                    <li v-for="(book, index) in books">
+                        {{index}}&nbsp;&nbsp;&nbsp;&nbsp;{{book.title}}&nbsp;&nbsp;&nbsp;&nbsp;{{book.price}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-14">
+                <ul>
+                    <li v-for="value in employee">
+                        {{value}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-15">
+                <ul>
+                    <li v-for="(value, key, index) in employee">
+                        {{index}}&nbsp;&nbsp;&nbsp;&nbsp;{{key}}&nbsp;&nbsp;&nbsp;&nbsp;{{value}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- 生产环境版本，优化了尺寸和速度  -->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+
+<script src="data-bind.js"></script>
+</body>
+</html>
