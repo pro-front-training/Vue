@@ -22,6 +22,18 @@
                 <label for="checkbox-1">{{message}}</label>
             </div>
         </div>
+        <div class="col-md-4">
+            <div id="app-2">
+                <input type="checkbox" id="jack" value="jack" v-model="message">
+                <label for="jack">Jack</label>
+                <input type="checkbox" id="john" value="john" v-model="message">
+                <label for="john">John</label>
+                <input type="checkbox" id="mike" value="mike" v-model="message">
+                <label for="mike">Mike</label>
+                <br/>
+                <span>{{message}}</span>
+            </div>
+        </div>
     </div>
 </div>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
