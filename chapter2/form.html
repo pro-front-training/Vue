@@ -18,23 +18,87 @@
     <div class="row" style="margin-bottom: 30px">
         <div class="col-md-4">
             <div id="app-1">
-                <input type="checkbox" id="checkbox-1" v-model="message">
-                <label for="checkbox-1">{{message}}</label>
+                <label for="input-1">单个复选框，结果是布尔值</label><br/>
+                <input type="checkbox" id="input-1" v-model="message">
+                <pre>{{message}}</pre>
             </div>
         </div>
         <div class="col-md-4">
             <div id="app-2">
-                <input type="checkbox" id="jack" value="jack" v-model="message">
-                <label for="jack">Jack</label>
-                <input type="checkbox" id="john" value="john" v-model="message">
-                <label for="john">John</label>
-                <input type="checkbox" id="mike" value="mike" v-model="message">
-                <label for="mike">Mike</label>
+                <label>多个复选框，结果是input的value值构成的数组</label><br/>
+                <input type="checkbox" value="apple" v-model="message">apple
+                <input type="checkbox" value="banana" v-model="message">banana
+                <input type="checkbox" value="orange" v-model="message">orange
                 <br/>
-                <span>{{message}}</span>
+                <pre>{{message}}</pre>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-3">
+                <label for="input-3">双向绑定</label>
+                <input class="form-control" id="input-3" v-model="message">
+                <pre>{{message}}</pre>
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div id="app-4">
+                <label for="input-4">textarea 双向绑定</label><br/>
+                <textarea class="form-control" id="input-4" v-model="message"></textarea>
+                <pre>{{message}}</pre>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-5">
+                <label>单选框，结果是input的value值</label><br/>
+                <input type="radio" value="apple" v-model="message">apple<br/>
+                <input type="radio" value="banana" v-model="message">banana<br/>
+                <input type="radio" value="orange" v-model="message">orange<br/>
+                <pre>{{message}}</pre>
+            </div>
+        </div>
+        <div cla="col-md-4">
+            <div id="app-6">
+                <label>下拉选择框</label><br/>
+                <select class="form-control" v-model="message">
+                    <option disabled value="">请选择</option>
+                    <option>apple</option>
+                    <option>banana</option>
+                    <option>orange</option>
+                </select>
+                <pre>{{message}}</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div id="app-7">
+                <label>多选下拉框(按shift多选)，结果为数组</label><br/>
+                <select multiple class="form-control" v-model="message">
+                    <option>apple</option>
+                    <option>banana</option>
+                    <option>orange</option>
+                </select>
+                <pre>{{message}}</pre>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="app-8">
+                <label>动态生成下拉框</label><br/>
+                <select class="form-control" v-model="message">
+                    <option disabled value="">请选择</option>
+                    <option v-for="option in options" v-bind:value="option">
+                        {{option}}
+                    </option>
+                </select>
+                <pre>{{message}}</pre>
+            </div>
+        </div>
+    </div>
+
 </div>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.0/js/bootstrap.min.js"></script>
