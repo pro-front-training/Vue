@@ -1,5 +1,5 @@
 // 参数绑定
-var app1 = new Vue({
+let app1 = new Vue({
     el: "#app-1",
     data: {
         message: "Hello, Vue!"
@@ -7,7 +7,7 @@ var app1 = new Vue({
 })
 
 // 使用v-bind绑定参数
-var app2 = new Vue({
+let app2 = new Vue({
     el: "#app-2",
     data: {
         message: "页面加载于 " + new Date().toLocaleString()
@@ -15,15 +15,15 @@ var app2 = new Vue({
 })
 
 // 逻辑判断
-var app3 = new Vue({
+let app3 = new Vue({
     el: "#app-3",
     data: {
-        seen: true
+        isVisible: true
     }
 })
 
 // 使用for循环
-var app4 = new Vue({
+let app4 = new Vue({
     el: "#app-4",
     data: {
         books: [
@@ -44,7 +44,7 @@ var app4 = new Vue({
 })
 
 // 绑定事件
-var app5 = new Vue({
+let app5 = new Vue({
     el: "#app-5",
     data: {
         message: "绑定事件!"
@@ -57,7 +57,7 @@ var app5 = new Vue({
 })
 
 // 双向绑定
-var app6 = new Vue({
+let app6 = new Vue({
     el: "#app-6",
     data: {
         message: "双向绑定"
@@ -71,7 +71,7 @@ Vue.component("books", {
     template: "<li>{{book.title}}&nbsp;&nbsp;&nbsp;&nbsp;{{book.price}}</li>" // 模板
 })
 
-var app7 = new Vue({
+let app7 = new Vue({
     el: "#app-7",
     data: {
         books: [
@@ -87,7 +87,7 @@ var app7 = new Vue({
             },
             {
                 id: 3,
-                title: "PHP Cookbook",
+                title: "C Primer Plus",
                 price: "$58.8"
             }
         ]
@@ -100,7 +100,7 @@ var app7 = new Vue({
  */
 
 // 钩子函数 created, mounted, updated, destroyed
-var app8 = new Vue({
+let app8 = new Vue({
     el: "#app-8",
     data: {
         message: "钩子函数"
